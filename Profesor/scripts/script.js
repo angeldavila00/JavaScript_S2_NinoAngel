@@ -34,9 +34,15 @@ if(booleanito1 == true){
 else{
     console.log("No es verdadero");
 }
-//Funciones bucles
-for(i=0;1<4;++) {
-    console.log("Buenas");
+//Bucles
+
+for(i=0;1<4;) {
+   console.log("Buenas");
+}
+holi=true
+while(holi==true){
+    console-log("buenasss");
+    holi=false;
 }
 
 
