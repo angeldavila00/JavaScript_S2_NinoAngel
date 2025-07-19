@@ -1,0 +1,130 @@
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Times New Roman', serif;
+    
+}
+
+.preloader {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background: white;
+    width: 40vw;
+    height: auto;
+}
+
+.header {
+    text-align: center;
+    background: rgb(88, 223, 43);
+    color: white;
+    font-size: 35px;
+}
+
+.contenedor{
+    margin: 1rem;
+    text-align: center;
+
+}
+.menuBtn {
+    width: 25vw;
+    height: 10vh;
+    border-radius: 30px;
+    margin: 0.5rem;
+}
+
+.contenedor button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 16px 20px rgba(30, 30, 217, 0.3);
+}
+
+.modal_general {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    flex-grow: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal_general:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal_general:target .modal_añadir {
+    transform: scale(1);
+}
+
+
+.modal_añadir {
+    background-color: #a3a8e6;
+    width: 60vw;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.7);
+    display: flex;
+    transition: transform 0.5s ease;
+    font-size: 24px;
+    padding-bottom: 2vh;
+}
+.centered {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.centered h3 {
+    margin: 0;
+}
+
+.modal_añadir input {
+    border-radius: 25px;
+    display: flex;
+    text-align: center;
+    gap: 100px;
+    width: 40vw;
+    height: 2vw;
+    border: #D9D9D9;
+    background:white;
+    font-size: 20px;
+    margin: 8px;
+
+}
+
+.modal_añadir label {
+    display: flex;
+    text-align: center;
+    font-size: 130%;
+    
+
+}
+
+.modal_header {
+    width: 100%;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
