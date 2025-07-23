@@ -40,7 +40,7 @@ while (booleano === true){
         let nombre =prompt('Ingresa el nombre del ingrediente que quieres agregar: ');
         let descripcion = prompt('Como es la descripcion del ingrediente: ')
         let precio = prompt('Cual es su precio: ')
-        let stock = prompt('Cuanto es el stock de ese iongrediente:')
+        let stock = prompt('Cuanto es el stock de ese ingrediente:')
 
         ingredientes.push({
             "nombre": nombre,
