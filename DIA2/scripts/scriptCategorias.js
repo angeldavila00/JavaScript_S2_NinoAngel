@@ -40,7 +40,7 @@ while (booleano === true) {
         let leng = categorias.length;
         for (let i = 0; i < leng; i++) {
             alert(
-                "Ingrediente# " + (i + 1) + "\n" +
+                "Categoria# " + (i + 1) + "\n" +
                 "Nombre: " + categorias[i]["nombre"] + "\n" +
                 "Descripcion: " + categorias[i]["descripcion"]
                     
@@ -52,7 +52,7 @@ while (booleano === true) {
         let leng = categorias.length;
         for (let i = 0; i < leng; i++) {
             alert(
-                "Ingrediente# " + (i + 1) + "\n" +
+                "Categoria# " + (i + 1) + "\n" +
                 "Nombre: " + categorias[i]["nombre"] + "\n" +
                 "Descripcion: " + categorias[i]["descripcion"]
                     
@@ -67,7 +67,7 @@ while (booleano === true) {
         let leng = categorias.length;
         for (let i = 0; i < leng; i++) {
             alert(
-                "Ingrediente# " + (i + 1) + "\n" +
+                "Categoria# " + (i + 1) + "\n" +
                 "Nombre: " + categorias[i]["nombre"] + "\n" +
                 "Descripcion: " + categorias[i]["descripcion"]
                     
