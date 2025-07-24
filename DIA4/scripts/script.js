@@ -1,0 +1,181 @@
+// Datos iniciales
+let categorias = [
+    {
+        "nombre": "Clásica",
+        "descripcion": "Hamburguesas clásicas y sabrosas"
+    },
+    {
+        "nombre": "Vegetariana",
+        "descripcion": "Hamburguesas sin carne, perfectas para vegetarianos"
+    },
+    {
+        "nombre": "Gourmet",
+        "descripcion": "Hamburguesas gourmet con ingredientes premium"
+    }
+];
+
+let chefs = [
+    {
+        "nombre": "ChefA",
+        "especialidad": "Carnes"
+    },
+    {
+        "nombre": "ChefB",
+        "especialidad": "Cocina Vegetariana"
+    },
+    {
+        "nombre": "ChefC",
+        "especialidad": "Gourmet"
+    }
+];
+
+let hamburguesa = [
+    {
+        "nombre": "Clásica",
+        "categoria": "Clásica",
+        "ingredientes": ["Pan", "Carne de res", "Queso cheddar", "Lechuga", "Tomate", "Cebolla", "Mayonesa", "Ketchup"],
+        "precio": 10,
+        "chef": "ChefA"
+    },
+    {
+        "nombre": "Vegetariana",
+        "categoria": "Vegetariana",
+        "ingredientes": ["Pan integral", "Hamburguesa de lentejas", "Queso suizo", "Espinacas", "Cebolla morada", "Aguacate", "Mayonesa vegana"],
+        "precio": 8,
+        "chef": "ChefB"
+    },
+    {
+        "nombre": "Doble Carne",
+        "categoria": "Gourmet",
+        "ingredientes": ["Pan de sésamo", "Doble carne de res", "Queso cheddar", "Bacon", "Lechuga", "Cebolla caramelizada", "Salsa BBQ"],
+        "precio": 12,
+        "chef": "ChefC"
+    }
+];
+
+let ingredientes = [
+    {
+        "nombre": "Pan",
+        "descripcion": "Pan de hamburguesa clásico",
+        "precio": 2.5,
+        "stock": 500
+    },
+    {
+        "nombre": "Carne de res",
+        "descripcion": "Carne de res jugosa y sabrosa",
+        "precio": 8,
+        "stock": 300
+    },
+    {
+        "nombre": "Queso cheddar",
+        "descripcion": "Queso cheddar derretido",
+        "precio": 1.5,
+        "stock": 200
+    }
+];
+
+//Menu Principal
+function menuPrincipal(){
+    let booleano = true;
+
+    while (booleano === true){
+        let opcion = prompt(
+            'Bienvenido a la hamburgueseria - sistema de Gestion\
+            \n1. Gestionar Categorias\
+            \n2. Gestionar Chefs\
+            \n3. Gestionar Hamburguesas\
+            \n4. Gestionar Ingredientes\
+            \n5. Salir');
+
+            if (opcion === "1"){
+                gestionarCategorias()
+            }
+            else if (opcion === "2"){
+                gestionarChefs()
+            }
+            else if (opcion === "3"){
+                gestionarHamburguesas()
+            }
+            else if (opcion === "4"){
+                gstionarIngredientes()
+            }
+            else if (opcion === "5"){
+                booleano = false;
+                alert('Gracias por usar nuestro servicio')
+            }
+            else {
+                alert('Opcion no valida, por favor intentar nuevamente')
+            }
+    }
+}
+
+//inicio del sistema
+
+menuPrincipal();
+
+// Gestionar categorías
+function gestionarCategorias() {
+    let booleano = true;
+    while (booleano === true) {
+        let opcion = prompt(
+            'Bienvenido a la hamburgueseria sesion de categoria\
+        \n1. agregar categoria\
+        \n2. Ver categoria\
+        \n3. Eiminar categoria\
+        \n4. editar categoria\
+        \n5. Volver al menu principal')
+        if (opcion === "1") {
+            let nombre = prompt('Ingresa el nombre de la categoria que quieres agregar: ');
+            let descripcion = prompt('Cual es la descripcion: ')
+
+            categorias.push({
+                "nombre": nombre,
+                "descripcion": descripcion,
+            });
+        }
+        else if (opcion === "2") {
+            let leng = categorias.length;
+            for (let i = 0; i < leng; i++) {
+                alert(
+                    "Categoria# " + (i + 1) + "\n" +
+                    "Nombre: " + categorias[i]["nombre"] + "\n" +
+                    "Descripcion: " + categorias[i]["descripcion"]
+
+                )
+            }
+        }
+        else if (opcion === "3") {
+            let leng = categorias.length;
+            for (let i = 0; i < leng; i++) {
+                alert(
+                    "Categoria# " + (i + 1) + "\n" +
+                    "Nombre: " + categorias[i]["nombre"] + "\n" +
+                    "Descripcion: " + categorias[i]["descripcion"]
+
+                )
+            }
+            let eli = prompt("Dime el numero de la categoria que deseas eliminar: ");
+            categorias.splice(eli - 1, 1);
+        }
+        else if (opcion === "4") {
+            let leng = categorias.length;
+            for (let i = 0; i < leng; i++) {
+                alert(
+                    "Categoria# " + (i + 1) + "\n" +
+                    "Nombre: " + categorias[i]["nombre"] + "\n" +
+                    "Descripcion: " + categorias[i]["descripcion"]
+
+                )
+            }
+            let num = prompt('Ingresa el numero del usuario que quieres editar: ');
+            let nam = prompt('Dime el nuevo nombre del ingrediente:');
+            let desc = prompt('Dime la descripcion: ');
+            categorias[num - 1]["nombre"] = nam;
+            categorias[num - 1]["descripcion"] = desc;
+        }
+        else if (opcion === "5") {
+            booleano = false;
+            alert("Regresando al menu principal")
+        }
+    }
+}
