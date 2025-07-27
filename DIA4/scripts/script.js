@@ -101,10 +101,10 @@ function menuPrincipal(){
             }
             else if (opcion === "5"){
                 booleano = false;
-                alert('Gracias por usar nuestro servicio')
+                alert('Gracias por usar nuestro servicio');
             }
             else {
-                alert('Opcion no valida, por favor intentar nuevamente')
+                alert('Opcion no valida, por favor intentar nuevamente');
             }
     }
 }
@@ -126,7 +126,7 @@ function gestionarCategorias() {
         \n5. Volver al menu principal')
         if (opcion === "1") {
             let nombre = prompt('Ingresa el nombre de la categoria que quieres agregar: ');
-            let descripcion = prompt('Cual es la descripcion: ')
+            let descripcion = prompt('Cual es la descripcion: ');
 
             categorias.push({
                 "nombre": nombre,
@@ -194,7 +194,7 @@ function gestionarChefs() {
         \n5. Volver al menu principal')
         if (opcion === "1") {
             let nombre = prompt('Ingresa el nombre del chef que quieres agregar: ');
-            let especialidad = prompt('Cual es la especialidad: ')
+            let especialidad = prompt('Cual es la especialidad: ');
 
             chefs.push({
                 "nombre": nombre,
@@ -267,18 +267,16 @@ function gestionarHamburguesas() {
 
         if (opcion === "1") {
             let nombre = prompt('Ingresa el nombre de la hamburguesa: ');
-            let categoria = prompt('Cual es la categoria de la hamburguesa: ej Clasica, Gourmet ')
-            let ingrediente = prompt('Dime que ingredientes tiene: ')
-            let precio = prompt('Cual es el precio de la hamburguesa: ')
-            let chef = prompt('Como se llama el chef que preparo la hamburguesa: ')
-
+            let categoria = prompt('Cual es la categoria de la hamburguesa: ej Clasica, Gourmet ');
+            let ingrediente = prompt('Dime que ingredientes tiene: ');
+            let precio = prompt('Cual es el precio de la hamburguesa: ');
+            let chef = prompt('Como se llama el chef que preparo la hamburguesa: ');
             hamburguesa.push({
                 "nombre": nombre,
                 "categoria": categoria,
                 "ingredientes": ingrediente,
                 "precio": precio,
                 "chef": chef,
-
             });
         }
         else if (opcion === "2") {
@@ -292,7 +290,6 @@ function gestionarHamburguesas() {
                     "Precio: " + hamburguesa[i]["precio"] + "\n" +
                     "Chef: " + hamburguesa[i]["chef"]
                 )
-
             }
         }
         else if (opcion === "3") {
@@ -306,12 +303,10 @@ function gestionarHamburguesas() {
                     "Precio: " + hamburguesa[i]["precio"] + "\n" +
                     "Chef: " + hamburguesa[i]["chef"]
                 )
-
             }
             let eli = prompt("Dime el numero de la hamburguesa que deseas eliminar: ");
             hamburguesa.splice(eli - 1, 1);
         }
-
         else if (opcion === "4") {
             let leng = hamburguesa.length;
             for (let i = 0; i < leng; i++) {
@@ -323,7 +318,6 @@ function gestionarHamburguesas() {
                     "Precio: " + hamburguesa[i]["precio"] + "\n" +
                     "Chef: " + hamburguesa[i]["chef"]
                 )
-
             }
             let num = prompt('Ingresa el numero de la hamburguesa que quieres editar: ');
             let nam = prompt('Dime el nuevo nombre de la hamburguesa:');
@@ -362,9 +356,9 @@ function gestionarIngredientes() {
 
         if (opcion === "1") {
             let nombre = prompt('Ingresa el nombre del ingrediente que quieres agregar: ');
-            let descripcion = prompt('Como es la descripcion del ingrediente: ')
-            let precio = prompt('Cual es su precio: ')
-            let stock = prompt('Cuanto es el stock de ese ingrediente:')
+            let descripcion = prompt('Como es la descripcion del ingrediente: ');
+            let precio = prompt('Cual es su precio: ');
+            let stock = prompt('Cuanto es el stock de ese ingrediente:');
 
             ingredientes.push({
                 "nombre": nombre,
@@ -426,7 +420,7 @@ function gestionarIngredientes() {
         }
         else if (opcion === "5") {
             booleano = false;
-            alert("Gracias por usar nuestro servicio")
+            alert("Gracias por usar nuestro servicio");
         }
     }
 }

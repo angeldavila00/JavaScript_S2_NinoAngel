@@ -9,7 +9,6 @@
 // // Callback que suma dos números
 // function sumar(num1, num2) {
 //     console.log(`Suma: ${num1 + num2}`);
-    
 // }
 
 // // Callback que multiplica dos números
@@ -34,23 +33,23 @@
 // realizarTareas(4 , 2, dividir);
 
 
-let booleano = true;
-while(booleano === true){
-    let calculadora = prompt (
-        `BIENVENIDO A LA CALCULADORA VIRTUAL
-        1. SUMA
-        2. RESTA
-        3. MULTIPLICACION
-        4. DIVISION
-        5. SALIR`
-    )
+/*function procesoLento(callback){
+    console.log("Iniciando proceso..");
 
-    if (calculadora === "1"){
-        let num1 = prompt(`Dime el primer numero para sumar`);
-        let num2 = prompt(`Dime el segundo numero para realizar la suma`)
-        let sumar = num1 + num2;
-        console.log(sumar);
-        
-    }
-    
+    setTimeout(() => {
+        callback("Proceso finalizo");
+    }, 3000);
+}*/
+
+function saludar() {
+    console.log("Proceso finalizo");
 }
+
+function procesoLento(callback) {
+    console.log("Iniciar proceso..");
+    setTimeout(() => {
+        callback("proceso finalizo..");
+    }, 3000);
+}
+
+procesoLento(saludar);
