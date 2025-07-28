@@ -48,7 +48,7 @@ function saludar() {
 function procesoLento(callback) {
     console.log("Iniciar proceso..");
     setTimeout(() => {
-        callback("proceso finalizo..");
+        callback(saludar);
     }, 3000);
 }
 
