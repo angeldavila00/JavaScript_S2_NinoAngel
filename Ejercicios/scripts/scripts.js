@@ -1,7 +1,7 @@
 
- Función que toma dos números y un callback para realizar una operación
+//Función que toma dos números y un callback para realizar una operación
 function realizarOperacion(num1, num2, operacionCallback) {
-   console.log(`Operación: ${num1} y ${num2}`);
+    console.log(`Operación: ${num1} y ${num2}`);
  //Llama al callback pasándole los dos números como argumentos
     operacionCallback(num1, num2);
 }
@@ -20,13 +20,13 @@ function multiplicar(a, b) {
 realizarOperacion(5, 3, sumar);
 realizarOperacion(5, 3, multiplicar);
 
- function realizarTareas(num1 , num2 , operacion){
+function realizarTareas(num1 , num2 , operacion){
     console.log(`Operacion ${num1} y ${num2}`);
-   operacion(num1,num2);
+    operacion(num1,num2);
 }
 
 function dividir (a, b){
- console.log(`Dividion ${a / b}`)
+    console.log(`Dividion ${a / b}`)
 
 }
 
