@@ -1,46 +1,32 @@
-function buscarPersonaje() {
+// consumo de API
+// mediante XMLHttpRequest
 
-    let nombreBuscado = prompt('Ingrese el nombre exacto del personaje:');
-    nombreBuscado = nombreBuscado.toLowerCase().trim();
+//Modularizar el consumo de api
+function buscarPesonaje (){
+    const nombreUsar = prompt("DIme el nombre del personaje");
+    const xhr = new XMLHttpRequest(); //La importancia del XML
+    const url = `https://rickandmortyapi.com/api/character?name=${nombreUsar}`; 
+    console.log(url);
+    xhr.open("GET",url,true);
+    xhr.onreadystatechange = function (){
+        if (xhr.readyState === 4 && xhr.status == 200){
+            try {
 
-    let paginaActual = 1;
-    let totalPaginas = 42;
-    let personajeEncontrado = false;
-
-    function buscarEnPag(pagina) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://rickandmortyapi.com/api/character?page=' + pagina, true);
-        xhr.onload = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                const data = JSON.parse(this.response);
-                for (i = 0; i < data.results.length; i++) {
-                    let personaje = data.results[i];
-                    if (personaje.name.toLowerCase() === nombreBuscado) {
-                        let mensaje = 'Personaje encontrado:\n\n';
-                        mensaje += 'Nombre: ' + personaje.name + '\n';
-                        mensaje += 'Especie: ' + personaje.species + '\n';
-                        mensaje += 'Estado: ' + personaje.status + '\n';
-                        mensaje += 'Ubicación: ' + personaje.location.name;
-                        alert(mensaje);
-                        personajeEncontrado = true;
-                        return;
-                    }
-                }
-                if (pagina < totalPaginas && !personajeEncontrado) {
-                    buscarEnPag(pagina + 1);
-                } else if (!personajeEncontrado) {
-                    alert('No se encontró el personaje con el nombre "' + nombreBuscado + '".');
-                }
+                const daticos = JSON.parse (xhr.responseText);
+                alert("The character is:" + "\n" +
+                "Name: "+daticos["results"][0]["name"]+"\n"+
+                "Status: "+daticos["results"][0]["status"]+"\n"+
+                "Specie: "+daticos["results"][0]["species"]
+                )
             }
-        };
+            catch(err){
 
-        xhr.send();
-    }
-
-    buscarEnPag(paginaActual);
+                console.log(err.message);
+            }
+        }
+    };
+    xhr.send();
 }
 
-buscarPersonaje();
-
-
+buscarPesonaje();
 
