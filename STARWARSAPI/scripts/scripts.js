@@ -1,22 +1,26 @@
 function buscarPesonaje() {
     const xhr = new XMLHttpRequest(); //La importancia del XML
-    const url = `https://swapi.py4e.com/api/people/1/`;
+    const url = `https://swapi.py4e.com/api/people/`;
     console.log(url);
     xhr.open("GET", url, true);
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status == 200) {
-            try {
+        try {
+            if (xhr.readyState === 4 && xhr.status == 200) {
+                const data = JSON.parse(xhr.responseText);
+                console.log(data.results);
+                const main = document.getElementById("class");
+            main.innerHTML = "";   
 
-                const daticos = JSON.parse(xhr.responseText);
-                /*alert("The character is:" + "\n" +
-                    "Name: " + daticos["results"][0]["name"] + "\n" +
-                    "Height: " + daticos["results"][0]["height"] + "\n" +
-                    "Hair_Color: " + daticos["results"][0]["hair_color"]
-                )*/
-                console.log(daticos)
-                console.log(daticos["name"])
+            for (let index = 0; index < data.results.length; index++){
+                    const div = 
             }
-            catch (err) {
+            
+        
+        }
+            
+            
+            
+                catch (err) {
 
                 console.log(err.message);
             }
