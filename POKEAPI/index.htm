@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>POKEDEX-API</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <main>
-
-        <img src="" alt="pokemon" class="pokemon_imagen">
-        <h1 class="pokemon_datos">
-            <span class="pokemon_numero"></span>
-            <span class="pokemon_nombre"></span>
+    <h1>POKEDEX - API</h1>
+    <div class="pokedex">
+        <img src="#" alt="" class="pokemon_imagen"/>
+        <h1>
+            <span id="numero">2</span>
+            <span class="nombre">fff</span>
         </h1>
-
-        <form class="form">
-            <input type="search"
-            class="input_buscar"
-            placeholder="Name or Number"
-            required>
-
+        <form class="formulario">
+            <input type="search" placeholder="ID OR NAME" id="busqueda">
         </form>
+        <div class="botones">
+            <button class="prev">&lt PREV</button>
+            <button class="next">NEXT &gt</button>
+        </div>
+        <img src="./media/pokedex.png" alt="pokedex" class="pokedex_img" />
 
-        
-    </main>
+    </div>
     
 
 </body>

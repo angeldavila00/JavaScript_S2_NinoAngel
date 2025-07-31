@@ -8,12 +8,87 @@
 
 body{
     text-align: center;
-    background: linear-gradient(to bottom, #6ab7f5,#fff);
-    min-height: 100vh;
+    background: linear-gradient(to bottom, #6ab7f5, #fff);/*un fondo degradado que va de arriba hacia abajo */
+    min-height: 100vh; /* el nivel de color */
 }
 
-main{
+.pokedex{
     display: inline-block;
-    padding: 15px;
     position: relative;
+    top: 5px;
+    
+}
+
+.pokemon_imagen{
+    position: absolute;
+    top: 200px;
+    right: 140px;
+    height: 120px;
+    max-height: 180px; 
+    max-width: 180px; 
+    object-fit: contain;
+}
+
+.pokedex h1{
+    position: absolute;
+    font-weight: 600;
+    color: #aaa;
+    top: 350px;
+    right: 25%;
+    font-size: 2rem;
+}
+
+.pokedex .nombre{
+    color: black;
+}
+
+.pokedex form{
+    position: absolute;
+    width: 100%;
+    top: 420px;
+}
+
+.pokedex input{
+    width: 300px;
+    padding: 4%;
+    margin-right: 30px;
+    outline: black;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+    
+}
+
+.botones {
+    display: flex;
+    position: absolute;
+    top: 530px;
+    width: 300px;
+    margin-left: 50px;
+    gap: 20px;
+}
+
+.pokedex button{
+    width: 140px;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px #000;
+}
+
+.pokedex button:hover {
+    cursor: pointer;
+    cursor: url('./../media/favicon-16x16.png'), auto;
+}
+
+.pokedex button:active {
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
 }
