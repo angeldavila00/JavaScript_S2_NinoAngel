@@ -21,7 +21,7 @@ function buscarPokemon(pokemon) {
             const data = JSON.parse(xhr.responseText);
             pokemonNombre.innerHTML = data.name;
             pokemonNumero.innerHTML = data.id;
-            pokemonImage.src = data['sprites']['front_shiny'];
+            pokemonImage.src = data.sprites.versions['generation-v']['black-white'].animated.front_default || data.sprites.front_default;
             pokemonImage.style.display = 'block';
             searchPokemon = data.id;
             input.value = '';
