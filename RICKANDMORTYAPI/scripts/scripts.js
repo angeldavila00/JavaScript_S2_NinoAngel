@@ -28,8 +28,6 @@ function buscarPersonaje() {
                         console.log(data)
                     };
                 }
-                
-
                 }
                 catch(err){
                     alert("no ")
