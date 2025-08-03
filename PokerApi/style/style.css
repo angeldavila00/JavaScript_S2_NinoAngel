@@ -31,6 +31,7 @@ h1{
     padding: 25px;
     text-align: left;
     font-size: 25px;
+    border-radius: 30px;
 }
 
 .instrucciones h2{
@@ -40,3 +41,100 @@ h1{
     background-position-y:bottom;
     background-size: cover;
 }
+
+.dificultad_botones h3 {
+    color: transparent;
+    background-image: url(../img/casino.jpg);
+    background-clip: text;
+    background-position-y:bottom;
+    background-size: cover;
+    font-size: 35px;
+}
+
+.dificultad_btn {
+    background: url(../img/with.jpg);
+    background-size: cover;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    font-size: 20px;
+    margin: 5px;
+    transition: all 0.4s;
+}
+
+.dificultad_btn:hover {
+    background: #670b0b;
+    transform: translateY(-2px);
+}
+
+.dificultad_btn.seleccion{
+    background: #670b0b;
+    box-shadow: 0 4px 20px rgb(255, 254, 254, 0.4);
+}
+
+.nivel_info{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.game_nivel{
+    font-size: 30px;
+    margin: 20px 0;
+    min-height: 30px;
+}
+
+.btn_game{
+    background-image: url(../img/with.jpg);
+    background-size: cover;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 18px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn_game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.area_tarjetas{
+    margin: 30px 0;
+}
+
+.cartas_zona{
+    display: grid;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.cartas_zona.facil{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartas_zona.medio{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cartas_zona.dificil{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.carta{
+    width: 22vw;
+    height: 50vh;
+    border: 3px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #333;
+}
+
