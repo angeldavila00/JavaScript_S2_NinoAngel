@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria de cartas - poker</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <h1>Memoria Poker</h1>
+    <div class="game_contenedor">
+
+        <div class="instrucciones">
+            <h2>Reglas: </h2>
+            <div class="reglas">
+                <p>1. Elige tu nivel de dificultad.</p>
+                <p>2. Preciona el boton "Iniciar Juego"</p>
+                <p>3. Observa las cartas que aparecen una por una. </p>
+                <p>4. Memoriza el ORDEN en que las cartas apartecen</p>
+                <p>5. Cuando se oculten todas tendras que hacer clic en el mismo orden.</p>
+                <p>6. ¡Ganas por realizar la secuencia correcta!</p>
+            </div>
+        </div>
+
+        <div class="dificultad_botones">
+            <h3>Selecciona el Nivel:</h3>
+            <button class="dificultad_btn" onclick="">Nivel 1</button>
+            <button class="dificultad_btn" onclick="">Nivel 2</button>
+            <button class="dificultad_btn" onclick="">Nivel 3</button>
+        </div>
+
+        <div class="nivel_info" id="infoNivel">
+            <strong>Nivel Facil: </strong> 4 Cartas, 2 segundos cada una.
+        </div>
+
+        <div class="game_nivel" id="mensaje">
+            Seleciona el nivel y presiona ¡iniciar juego!
+        </div>
+
+        <div class="area_tarjetas">
+
+            <div class="cartas_facil" id="zonaCartas">
+                Aparicion de cartas
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="./script/script.js"></script>
+</html>
