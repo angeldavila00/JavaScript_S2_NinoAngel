@@ -48,6 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    async function agregarTks(id){
+        const status = event.target.getAttribute('status')
+
+        if(status == "On hold"){
+        await fetch (`https://66df3340de4426916ee3dd7e.mockapi.io/tareas/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status: 'ready'
+            })
+        })
+    }else {
+        await fetch (`https://66df3340de4426916ee3dd7e.mockapi.io/tareas/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            status: 'On hold'
+        })
+    })
+    }
+
+        const data = await fetchData();
+        displayCapsula(data);
+    }
+
     //console.log(fetchData());
     function displayCapsula(capsula) {
         datosContenedor.innerHTML = '';
@@ -61,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="botones">
                 <div class="terminadoNegativo">
-                    <img src="./storage/img/pngwing.com (2).png" data-id="${cap["id"]}" alt="" onclick="deleteTask" >
+                    <img src="./storage/img/pngwing.com (2).png" status="${cap["status"]}" data-id="${cap["id"]}" alt="" class="agregar-btn"  >
                 </div>
                 <div class="eliminadoNegativo">
                     <img src="./storage/img/pngwing.com (4).png" data-id="${cap["id"]}" alt="" class="delete-btn">
@@ -77,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="botones">
                 <div class="terminado">
-                    <img src="./storage/img/pngwing.com (2).png" data-id="${cap["id"]}" alt="">
+                    <img src="./storage/img/pngwing.com (2).png" status="${cap["status"]}" data-id="${cap["id"]}"   alt="" class="agregar-btn">
                 </div>
                 <div class="eliminado">
                     <img src="./storage/img/pngwing.com (4).png" data-id="${cap["id"]}" alt="" class="delete-btn">
@@ -85,9 +114,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`
             }
             datosContenedor.appendChild(capDiv);
+            //
             const deleteBtn = capDiv.querySelector('.delete-btn');
             deleteBtn.addEventListener('click', () => deleteTask(cap.id));
-        });
+///
+            const agregarBtn = capDiv.querySelector('.agregar-btn');
+            agregarBtn.addEventListener('click', () => agregarTks(cap.id));
+            });
+
+        
     }
     fetchData().then(data => {
         displayCapsula(data);
